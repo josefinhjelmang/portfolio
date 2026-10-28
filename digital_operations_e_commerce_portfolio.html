@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce & Digital Operations Specialist — Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FDFCF9',
+                            100: '#F4F1EA',
+                            200: '#E8E4DA',
+                            300: '#DCD6C8'
+                        },
+                        editorial: {
+                            black: '#171717',
+                            muted: '#66635D',
+                            border: '#E2DEC5',
+                            card: '#FAF8F4'
+                        },
+                        burgundy: {
+                            DEFAULT: '#8B2623',
+                            dark: '#6A1C1A',
+                            light: '#A33431',
+                            soft: 'rgba(139, 38, 35, 0.08)'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F4F1EA;
+            color: #171717;
+            overflow-x: hidden;
+        }
+
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F1EA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DCD6C8;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B2623;
+        }
+
+        /* Ambient Glow & Image Overlay Effect */
+        .editorial-shadow {
+            box-shadow: 0 10px 40px -15px rgba(23, 23, 23, 0.05);
+        }
+
+        /* Custom Range Slider */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background: #8B2623;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(139, 38, 35, 0.3);
+        }
+    </style>
+</head>
+<body class="selection:bg-burgundy selection:text-white">
+
+    <!-- TOP HEADER / NAV BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cream-100/85 backdrop-blur-md border-b border-editorial-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            
+            <!-- Brand / Name Header -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <span class="font-serif italic text-xl font-semibold tracking-tight group-hover:text-burgundy transition-colors">Alex Svensson</span>
+                <span class="hidden sm:inline-block font-mono text-[11px] text-editorial-muted uppercase tracking-widest border-l border-editorial-border pl-3">Ops & E-Commerce</span>
+            </a>
+
+            <!-- Editorial Menu Links -->
+            <nav class="hidden md:flex items-center space-x-10 font-mono text-xs tracking-widest uppercase">
+                <a href="#about" class="hover:text-burgundy transition-colors">About</a>
+                <a href="#work" class="hover:text-burgundy transition-colors">Work</a>
+                <a href="#competencies" class="hover:text-burgundy transition-colors">Services</a>
+                <a href="#calculator" class="hover:text-burgundy transition-colors">ROI Calculator</a>
+                <a href="#contact" class="hover:text-burgundy transition-colors">Contact</a>
+            </nav>
+
+            <!-- Status Indicator & Action -->
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-2 font-mono text-[11px] text-editorial-muted">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span>Available 2026</span>
+                </div>
+                
+                <a href="#contact" class="px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-cream-50 bg-burgundy hover:bg-burgundy-dark transition-all">
+                    Get in touch
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden text-lg p-2" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-b border-editorial-border px-6 py-6 space-y-4 font-mono text-xs tracking-widest uppercase">
+            <a href="#about" class="block py-2 border-b border-cream-200">About</a>
+            <a href="#work" class="block py-2 border-b border-cream-200">Work Cases</a>
+            <a href="#competencies" class="block py-2 border-b border-cream-200">Services</a>
+            <a href="#calculator" class="block py-2 border-b border-cream-200">ROI Calculator</a>
+            <a href="#contact" class="block text-burgundy font-bold py-2">Contact &rarr;</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Aesthetic & Editorial Typography) -->
+    <section id="hero" class="pt-36 pb-20 lg:pt-44 lg:pb-32 px-6 lg:px-12 max-w-7xl mx-auto">
+        
+        <!-- Header Metadata Strip -->
+        <div class="flex flex-wrap items-center justify-between border-b border-editorial-border pb-4 mb-12 font-mono text-xs text-editorial-muted uppercase tracking-widest gap-4">
+            <div>DIGITAL OPERATIONS SPECIALIST</div>
+            <div>E-COMMERCE // CRO // AUTOMATION</div>
+            <div>BASED IN SWEDEN</div>
+        </div>
+
+        <!-- Editorial Hero Display Headline -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <div class="lg:col-span-8 space-y-8">
+                <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.95] text-editorial-black font-normal">
+                    Creative <br/>
+                    <span class="italic font-normal text-burgundy">Operations</span> & <br/>
+                    E-Commerce.
+                </h1>
+
+                <p class="text-lg sm:text-xl text-editorial-muted font-light leading-relaxed max-w-2xl pt-4">
+                    Optimizing digital storefronts, streamlining operational workflows, and converting complex data into scalable revenue growth.
+                </p>
+
+                <!-- Action CTA & Resume -->
+                <div class="flex flex-wrap items-center gap-6 pt-4 font-mono text-xs uppercase tracking-widest">
+                    <a href="#work" class="px-8 py-4 bg-editorial-black text-cream-50 hover:bg-burgundy transition-all duration-300">
+                        Explore Work Cases &rarr;
+                    </a>
+                    <button onclick="downloadCV()" class="group flex items-center gap-2 text-editorial-black hover:text-burgundy transition-colors py-4">
+                        <i class="fa-solid fa-arrow-down-long group-hover:translate-y-0.5 transition-transform"></i>
+                        <span>Download Resume (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Aesthetic Image / Card Highlight -->
+            <div class="lg:col-span-4 space-y-4">
+                <div class="relative overflow-hidden border border-editorial-border bg-burgundy text-cream-50 p-8 space-y-8">
+                    <div class="font-serif italic text-3xl font-normal leading-tight">
+                        "Efficiency isn't just about saving time; it's about removing friction to amplify growth."
+                    </div>
+                    <div class="font-mono text-xs tracking-widest uppercase border-t border-burgundy-light/40 pt-4 flex justify-between">
+                        <span>OPERATIONAL FOCUS</span>
+                        <span>01 / 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- STATEMENT / ABOUT BANNER -->
+    <section id="about" class="py-20 border-t border-b border-editorial-border bg-cream-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-4 font-mono text-xs text-burgundy uppercase tracking-widest font-bold">
+                    // ABOUT & PHILOSOPHY
+                </div>
+
+                <div class="lg:col-span-8 space-y-6">
+                    <h2 class="font-serif text-3xl sm:text-4xl text-editorial-black leading-snug">
+                        Bridging the gap between high-end digital customer experiences and backend operational precision.
+                    </h2>
+                    <p class="text-editorial-muted text-base leading-relaxed font-light">
+                        Specializing in E-Commerce Optimization (CRO), ERP/PIM integrations, and logistics workflow automation. I help brands build scalable digital architectures that look refined on the outside and run effortlessly behind the scenes.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES / WORK SECTION (Expandable STAR Details) -->
+    <section id="work" class="py-28 max-w-7xl mx-auto px-6 lg:px-12">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <div class="font-mono text-xs text-burgundy uppercase tracking-widest font-bold mb-3">// SELECTED WORK CASES</div>
+                <h2 class="font-serif text-4xl sm:text-6xl text-editorial-black font-normal">Featured Projects</h2>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2 font-mono text-xs uppercase tracking-wider">
+                <button onclick="filterCases('all')" class="case-tab active px-4 py-2 border border-editorial-black bg-editorial-black text-cream-50 transition-all">All</button>
+                <button onclick="filterCases('cro')" class="case-tab px-4 py-2 border border-editorial-border hover:border-editorial-black transition-all">E-Commerce & CRO</button>
+                <button onclick="filterCases('ops')" class="case-tab px-4 py-2 border border-editorial-border hover:border-editorial-black transition-all">Operations</button>
+                <button onclick="filterCases('data')" class="case-tab px-4 py-2 border border-editorial-border hover:border-editorial-black transition-all">Analytics</button>
+            </div>
+        </div>
+
+        <!-- Cases Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- Case Card 1 -->
+            <div data-category="cro" onclick="openCaseModal('modal-1')" class="case-item group cursor-pointer border border-editorial-border bg-cream-50 p-6 sm:p-8 hover:border-burgundy transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div class="aspect-[16/10] overflow-hidden relative border border-editorial-border">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="E-Commerce Checkout Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 group-hover:grayscale-0">
+                        <span class="absolute top-4 left-4 bg-cream-50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-burgundy font-bold">E-Commerce CRO</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="font-mono text-xs text-editorial-muted uppercase tracking-widest">CASE 01 // CHECKOUT OPTIMIZATION</div>
+                        <h3 class="font-serif text-2xl font-normal group-hover:text-burgundy transition-colors">
+                            Redesigning Mobile Checkout: +18.4% Conversion Boost
+                        </h3>
+                        <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                            Reduced cart abandonment by eliminating checkout friction, implementing guest one-click express payments, and clarifying delivery deadlines.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-editorial-border flex items-center justify-between font-mono text-xs">
+                    <span class="text-burgundy font-bold">+18.4% Conversion Rate</span>
+                    <span class="group-hover:translate-x-1 transition-transform uppercase font-bold text-editorial-black">Read STAR Case &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Case Card 2 -->
+            <div data-category="ops" onclick="openCaseModal('modal-2')" class="case-item group cursor-pointer border border-editorial-border bg-cream-50 p-6 sm:p-8 hover:border-burgundy transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div class="aspect-[16/10] overflow-hidden relative border border-editorial-border">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Logistics & PIM Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 group-hover:grayscale-0">
+                        <span class="absolute top-4 left-4 bg-cream-50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-burgundy font-bold">Digital Operations</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="font-mono text-xs text-editorial-muted uppercase tracking-widest">CASE 02 // SYSTEMS INTEGRATION</div>
+                        <h3 class="font-serif text-2xl font-normal group-hover:text-burgundy transition-colors">
+                            Automated PIM to Shopify ERP Pipeline for 12,000 SKU Catalog
+                        </h3>
+                        <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                            Eliminated manual spreadsheet workflows by engineering automated API synchronizations between Inriver PIM, Fortnox ERP, and Shopify Plus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-editorial-border flex items-center justify-between font-mono text-xs">
+                    <span class="text-burgundy font-bold">-40% Time-To-Market</span>
+                    <span class="group-hover:translate-x-1 transition-transform uppercase font-bold text-editorial-black">Read STAR Case &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Case Card 3 -->
+            <div data-category="ops" onclick="openCaseModal('modal-3')" class="case-item group cursor-pointer border border-editorial-border bg-cream-50 p-6 sm:p-8 hover:border-burgundy transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div class="aspect-[16/10] overflow-hidden relative border border-editorial-border">
+                        <img src="https://images.unsplash.com/photo-1556742049-0a670fc8078a?auto=format&fit=crop&w=1000&q=80" alt="Self-Service Portal Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 group-hover:grayscale-0">
+                        <span class="absolute top-4 left-4 bg-cream-50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-burgundy font-bold">Process Automation</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="font-mono text-xs text-editorial-muted uppercase tracking-widest">CASE 03 // LOGISTICS PORTAL</div>
+                        <h3 class="font-serif text-2xl font-normal group-hover:text-burgundy transition-colors">
+                            Digital Self-Service Returns & Logistics Portal
+                        </h3>
+                        <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                            Automated paper-based returns into a QR-code customer self-service flow, drastically reducing customer service support tickets.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-editorial-border flex items-center justify-between font-mono text-xs">
+                    <span class="text-burgundy font-bold">18h Saved / Week</span>
+                    <span class="group-hover:translate-x-1 transition-transform uppercase font-bold text-editorial-black">Read STAR Case &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Case Card 4 -->
+            <div data-category="data" onclick="openCaseModal('modal-4')" class="case-item group cursor-pointer border border-editorial-border bg-cream-50 p-6 sm:p-8 hover:border-burgundy transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div class="aspect-[16/10] overflow-hidden relative border border-editorial-border">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80" alt="BI Dashboard Case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 group-hover:grayscale-0">
+                        <span class="absolute top-4 left-4 bg-cream-50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-burgundy font-bold">Business Intelligence</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="font-mono text-xs text-editorial-muted uppercase tracking-widest">CASE 04 // ANALYTICS DASHBOARD</div>
+                        <h3 class="font-serif text-2xl font-normal group-hover:text-burgundy transition-colors">
+                            Real-Time Sales & Purchasing Forecasting Engine
+                        </h3>
+                        <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                            Centralized raw data from GA4, Shopify, and warehouse management systems into Looker Studio for intelligent inventory purchasing decisions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-editorial-border flex items-center justify-between font-mono text-xs">
+                    <span class="text-burgundy font-bold">+25% Forecast Precision</span>
+                    <span class="group-hover:translate-x-1 transition-transform uppercase font-bold text-editorial-black">Read STAR Case &rarr;</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INTERACTIVE OPERATIONAL ROI CALCULATOR -->
+    <section id="calculator" class="py-24 border-t border-editorial-border bg-cream-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="font-mono text-xs text-burgundy uppercase tracking-widest font-bold">// INTERACTIVE SIMULATOR</div>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-editorial-black font-normal">
+                        Quantifying Operational Value
+                    </h2>
+                    <p class="text-editorial-muted text-sm leading-relaxed font-light">
+                        Manual order handling, stock synchronization, and fragmented support eat up valuable resources. Drag the controls to estimate potential hours and annual cost savings through automation.
+                    </p>
+
+                    <div class="p-4 border border-editorial-border font-mono text-xs text-editorial-muted bg-cream-100">
+                        <span class="text-burgundy font-bold">* Benchmark:</span> Based on an average 65-80% automation threshold of repetitive operational tasks.
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-cream-100 p-8 sm:p-10 border border-editorial-border space-y-8">
+                    
+                    <!-- Slider 1 -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between font-mono text-xs">
+                            <span class="uppercase tracking-wider">Monthly Order Volume:</span>
+                            <span id="calc-orders-val" class="font-bold text-burgundy">3,500 orders</span>
+                        </div>
+                        <input type="range" id="calc-orders-range" min="500" max="25000" step="500" value="3500" 
+                               class="w-full h-1 bg-editorial-border appearance-none cursor-pointer">
+                    </div>
+
+                    <!-- Slider 2 -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between font-mono text-xs">
+                            <span class="uppercase tracking-wider">Manual Processing Time / Order:</span>
+                            <span id="calc-time-val" class="font-bold text-burgundy">4 minutes</span>
+                        </div>
+                        <input type="range" id="calc-time-range" min="1" max="15" step="1" value="4" 
+                               class="w-full h-1 bg-editorial-border appearance-none cursor-pointer">
+                    </div>
+
+                    <!-- Slider 3 -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between font-mono text-xs">
+                            <span class="uppercase tracking-wider">Average Hourly Labor Rate:</span>
+                            <span id="calc-rate-val" class="font-bold text-burgundy">380 SEK/h</span>
+                        </div>
+                        <input type="range" id="calc-rate-range" min="200" max="800" step="20" value="380" 
+                               class="w-full h-1 bg-editorial-border appearance-none cursor-pointer">
+                    </div>
+
+                    <!-- Calculation Results Card -->
+                    <div class="pt-6 border-t border-editorial-border grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-5 border border-editorial-border bg-cream-50 font-mono">
+                            <div class="text-[11px] text-editorial-muted uppercase tracking-widest">Saved Time / Month</div>
+                            <div id="calc-hours-out" class="text-3xl font-serif text-burgundy mt-2 font-normal">163 hrs</div>
+                            <div class="text-[10px] text-editorial-muted mt-1">~1.0 Full-Time Position</div>
+                        </div>
+
+                        <div class="p-5 border border-editorial-border bg-cream-50 font-mono">
+                            <div class="text-[11px] text-editorial-muted uppercase tracking-widest">Est. Annual Value</div>
+                            <div id="calc-savings-out" class="text-3xl font-serif text-editorial-black mt-2 font-normal">743,200 SEK</div>
+                            <div class="text-[10px] text-burgundy font-bold mt-1">~61,900 SEK / month</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CORE SERVICES & COMPETENCIES -->
+    <section id="competencies" class="py-28 border-t border-editorial-border max-w-7xl mx-auto px-6 lg:px-12">
+        
+        <div class="font-mono text-xs text-burgundy uppercase tracking-widest font-bold mb-3">// AREAS OF EXPERTISE</div>
+        <h2 class="font-serif text-4xl sm:text-6xl text-editorial-black font-normal mb-16">Operational Services</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="p-8 border border-editorial-border bg-cream-50 space-y-4 hover:border-burgundy transition-all duration-300">
+                <div class="font-mono text-xs text-burgundy font-bold uppercase tracking-widest">01 // COMMERCE CRO</div>
+                <h3 class="font-serif text-2xl font-normal">E-Commerce Optimization</h3>
+                <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                    A/B testing, user journey mapping, checkout flow optimization, and mobile conversion enhancements designed to increase average order value (AOV) and conversion rates.
+                </p>
+            </div>
+
+            <div class="p-8 border border-editorial-border bg-cream-50 space-y-4 hover:border-burgundy transition-all duration-300">
+                <div class="font-mono text-xs text-burgundy font-bold uppercase tracking-widest">02 // ARCHITECTURE</div>
+                <h3 class="font-serif text-2xl font-normal">System Architecture & Automation</h3>
+                <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                    Connecting ERP, PIM, WMS, and storefront platforms. Implementing automated workflows (Make/Zapier/Python) to eliminate manual data entry.
+                </p>
+            </div>
+
+            <div class="p-8 border border-editorial-border bg-cream-50 space-y-4 hover:border-burgundy transition-all duration-300">
+                <div class="font-mono text-xs text-burgundy font-bold uppercase tracking-widest">03 // ANALYTICS</div>
+                <h3 class="font-serif text-2xl font-normal">Data & BI Reporting</h3>
+                <p class="text-editorial-muted text-sm font-light leading-relaxed">
+                    Designing custom Looker Studio dashboards, Google Analytics 4 tracking events, and automated inventory forecasting systems for data-backed executive decisions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECH STACK & SYSTEM GRID -->
+    <section class="py-20 border-t border-editorial-border bg-cream-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="font-mono text-xs text-editorial-muted uppercase tracking-widest mb-8">// TECH STACK & PLATFORMS</div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 font-mono text-xs">
+                <div class="p-5 border border-editorial-border bg-cream-100 text-center hover:border-burgundy transition-colors">
+                    <div class="font-bold">Shopify Plus</div>
+                    <div class="text-[10px] text-editorial-muted mt-1">E-Commerce</div>
+                </div>
+                <div class="p-5 border border-editorial-border bg-cream-100 text-center hover:border-burgundy transition-colors">
+                    <div class="font-bold">Centra</div>
+                    <div class="text-[10px] text-editorial-muted mt-1">Headless Commerce</div>
+                </div>
+                <div class="p-5 border border-editorial-border bg-cream-100 text-center hover:border-burgundy transition-colors">
+                    <div class="font-bold">Inriver PIM</div>
+                    <div class="text-[10px] text-editorial-muted mt-1">Product Data</div>
+                </div>
+                <div class="p-5 border border-editorial-border bg-cream-100 text-center hover:border-burgundy transition-colors">
+                    <div class="font-bold">Fortnox / BC</div>
+                    <div class="text-[10px] text-editorial-muted mt-1">ERP & Finance</div>
+                </div>
+                <div class="p-5 border border-editorial-border bg-cream-100 text-center hover:border-burgundy transition-colors">
+                    <div class="font-bold">Make / Zapier</div>
+                    <div class="text-[10px] text-editorial-muted mt-1">Automation</div>
+                </div>
+                <div class="p-5 border border-editorial-border bg-cream-100 text-center hover:border-burgundy transition-colors">
+                    <div class="font-bold">Looker Studio</div>
+                    <div class="text-[10px] text-editorial-muted mt-1">Analytics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section id="contact" class="py-32 border-t border-editorial-border text-center">
+        <div class="max-w-4xl mx-auto px-6 space-y-10">
+            <div class="font-mono text-xs text-burgundy uppercase tracking-widest font-bold">// INITIATE CONTACT</div>
+            
+            <h2 class="font-serif text-5xl sm:text-7xl text-editorial-black font-normal leading-tight">
+                Let's discuss your <br/>
+                <span class="italic text-burgundy">next project.</span>
+            </h2>
+
+            <p class="text-editorial-muted text-base max-w-xl mx-auto font-light">
+                Seeking a dedicated Digital Operations or E-Commerce Specialist for your brand? Get in touch directly via email.
+            </p>
+
+            <!-- Copy Email Box -->
+            <div class="max-w-md mx-auto p-4 border border-editorial-border bg-cream-50 font-mono text-xs flex items-center justify-between">
+                <span id="contact-email">alex.svensson.ops@example.com</span>
+                <button onclick="copyContactEmail()" class="px-4 py-2 bg-burgundy text-cream-50 hover:bg-burgundy-dark font-bold tracking-widest uppercase transition-colors">
+                    <span id="copy-label">Copy</span>
+                </button>
+            </div>
+
+            <div class="flex justify-center gap-8 font-mono text-xs uppercase tracking-widest pt-6">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-burgundy transition-colors">LinkedIn &rarr;</a>
+                <a href="mailto:alex.svensson.ops@example.com" class="hover:text-burgundy transition-colors">Email &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 border-t border-editorial-border font-mono text-xs text-editorial-muted bg-cream-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>© 2026 ALEX SVENSSON — ALL RIGHTS RESERVED</div>
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-burgundy"></span>
+                <span>EDITORIAL DIGITAL OPERATIONS PORTFOLIO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STAR METHOD MODALS FOR CASE DETAILS -->
+
+    <!-- Case Modal 1 -->
+    <div id="modal-1" class="fixed inset-0 z-50 hidden bg-editorial-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-cream-50 border border-editorial-border max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 sm:p-10 space-y-6">
+            <div class="flex items-center justify-between border-b border-editorial-border pb-4">
+                <div>
+                    <span class="font-mono text-xs text-burgundy uppercase font-bold tracking-widest">STAR CASE STUDY 01</span>
+                    <h3 class="font-serif text-2xl text-editorial-black mt-1">Mobile Checkout Optimization</h3>
+                </div>
+                <button onclick="closeCaseModal('modal-1')" class="text-xl hover:text-burgundy">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 font-light text-sm">
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">S — Situation</div>
+                    <p>A fashion retailer experienced a 68% drop-off rate on mobile checkouts due to unclear delivery timelines and complex multi-step forms.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">T — Task</div>
+                    <p>Lead user experience audits, formulate CRO hypotheses, and execute A/B testing for a streamlined single-page mobile checkout.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">A — Action</div>
+                    <p>Integrated Klarna Express Checkout, removed redundant fields, and added real-time delivery countdown triggers on product pages.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">R — Results</div>
+                    <ul class="font-mono text-xs space-y-1 text-burgundy font-bold">
+                        <li>+18.4% total mobile conversion increase over 60 days</li>
+                        <li>-22% reduction in cart abandonment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Modal 2 -->
+    <div id="modal-2" class="fixed inset-0 z-50 hidden bg-editorial-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-cream-50 border border-editorial-border max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 sm:p-10 space-y-6">
+            <div class="flex items-center justify-between border-b border-editorial-border pb-4">
+                <div>
+                    <span class="font-mono text-xs text-burgundy uppercase font-bold tracking-widest">STAR CASE STUDY 02</span>
+                    <h3 class="font-serif text-2xl text-editorial-black mt-1">PIM & ERP Integration</h3>
+                </div>
+                <button onclick="closeCaseModal('modal-2')" class="text-xl hover:text-burgundy">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 font-light text-sm">
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">S — Situation</div>
+                    <p>Product data for 12,000+ SKUs was manually synced via spreadsheets, causing stock discrepancies and delayed launches.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">T — Task</div>
+                    <p>Architect and engineer automated REST API integrations between Inriver PIM, Fortnox ERP, and Shopify Plus.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">A — Action</div>
+                    <p>Built automated Make pipelines with error-handling webhooks, image optimization, and real-time stock sync triggers.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">R — Results</div>
+                    <ul class="font-mono text-xs space-y-1 text-burgundy font-bold">
+                        <li>-40% faster time-to-market for new catalog drops</li>
+                        <li>100% elimination of manual inventory errors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Modal 3 -->
+    <div id="modal-3" class="fixed inset-0 z-50 hidden bg-editorial-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-cream-50 border border-editorial-border max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 sm:p-10 space-y-6">
+            <div class="flex items-center justify-between border-b border-editorial-border pb-4">
+                <div>
+                    <span class="font-mono text-xs text-burgundy uppercase font-bold tracking-widest">STAR CASE STUDY 03</span>
+                    <h3 class="font-serif text-2xl text-editorial-black mt-1">Self-Service Returns Portal</h3>
+                </div>
+                <button onclick="closeCaseModal('modal-3')" class="text-xl hover:text-burgundy">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 font-light text-sm">
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">S — Situation</div>
+                    <p>Customer support spent over 18 hours per week manually generating PDF return labels and answering return status inquiries.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">T — Task</div>
+                    <p>Deploy a paperless, digital return portal where customers initiate returns independently via QR codes.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">A — Action</div>
+                    <p>Integrated the portal directly with carrier APIs and set up automated SMS updates upon warehouse scanning.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">R — Results</div>
+                    <ul class="font-mono text-xs space-y-1 text-burgundy font-bold">
+                        <li>18 hours saved per week in support workload</li>
+                        <li>Return processing turnaround reduced from 5 days to under 24 hours</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Modal 4 -->
+    <div id="modal-4" class="fixed inset-0 z-50 hidden bg-editorial-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-cream-50 border border-editorial-border max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 sm:p-10 space-y-6">
+            <div class="flex items-center justify-between border-b border-editorial-border pb-4">
+                <div>
+                    <span class="font-mono text-xs text-burgundy uppercase font-bold tracking-widest">STAR CASE STUDY 04</span>
+                    <h3 class="font-serif text-2xl text-editorial-black mt-1">Looker Forecasting Engine</h3>
+                </div>
+                <button onclick="closeCaseModal('modal-4')" class="text-xl hover:text-burgundy">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 font-light text-sm">
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">S — Situation</div>
+                    <p>Executive leadership lacked real-time visibility into product margin fluctuations and inventory run-rate turnover.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">T — Task</div>
+                    <p>Consolidate GA4, Shopify, and ERP datasets into an automated Looker Studio executive dashboard.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">A — Action</div>
+                    <p>Constructed custom SQL queries, automated data blends, and set up automated re-order alert triggers.</p>
+                </div>
+                <div class="p-4 border border-editorial-border bg-cream-100">
+                    <div class="font-mono text-xs font-bold text-burgundy mb-1 uppercase tracking-wider">R — Results</div>
+                    <ul class="font-mono text-xs space-y-1 text-burgundy font-bold">
+                        <li>+25% purchasing forecast accuracy</li>
+                        <li>Eliminated 100% of manual reporting time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Case Category Filtering
+        function filterCases(category) {
+            const tabs = document.querySelectorAll('.case-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-editorial-black', 'text-cream-50');
+                tab.classList.add('border-editorial-border');
+            });
+
+            event.target.classList.add('bg-editorial-black', 'text-cream-50');
+
+            const items = document.querySelectorAll('.case-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Case Modal Handler
+        function openCaseModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCaseModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        // Operational ROI Calculator Logic
+        const ordersRange = document.getElementById('calc-orders-range');
+        const timeRange = document.getElementById('calc-time-range');
+        const rateRange = document.getElementById('calc-rate-range');
+
+        const ordersVal = document.getElementById('calc-orders-val');
+        const timeVal = document.getElementById('calc-time-val');
+        const rateVal = document.getElementById('calc-rate-val');
+
+        const hoursOut = document.getElementById('calc-hours-out');
+        const savingsOut = document.getElementById('calc-savings-out');
+
+        function calculateROI() {
+            const orders = parseInt(ordersRange.value);
+            const time = parseInt(timeRange.value);
+            const rate = parseInt(rateRange.value);
+
+            ordersVal.textContent = orders.toLocaleString('sv-SE') + ' orders';
+            timeVal.textContent = time + ' minutes';
+            rateVal.textContent = rate + ' SEK/h';
+
+            const monthlySavedMinutes = orders * time * 0.70;
+            const monthlySavedHours = Math.round(monthlySavedMinutes / 60);
+            const yearlySavedCost = monthlySavedHours * rate * 12;
+
+            hoursOut.textContent = monthlySavedHours.toLocaleString('sv-SE') + ' hrs';
+            savingsOut.textContent = yearlySavedCost.toLocaleString('sv-SE') + ' SEK';
+        }
+
+        ordersRange.addEventListener('input', calculateROI);
+        timeRange.addEventListener('input', calculateROI);
+        rateRange.addEventListener('input', calculateROI);
+
+        // Copy Email to Clipboard
+        function copyContactEmail() {
+            const email = document.getElementById('contact-email').innerText;
+            const temp = document.createElement('input');
+            temp.value = email;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+
+            const label = document.getElementById('copy-label');
+            label.innerText = 'Copied!';
+            setTimeout(() => {
+                label.innerText = 'Copy';
+            }, 2000);
+        }
+
+        // Download Resume Trigger
+        function downloadCV() {
+            const element = document.createElement('a');
+            const content = "ALEX SVENSSON — DIGITAL OPERATIONS & E-COMMERCE SPECIALIST\n\nFocus: CRO, System Architecture (PIM/ERP), Automation & Business Intelligence.\nContact: alex.svensson.ops@example.com";
+            const file = new Blob([content], {type: 'text/plain'});
+            element.href = URL.createObjectURL(file);
+            element.download = "Alex_Svensson_Resume.txt";
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+    </script>
+</body>
+</html>
