@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -8,21 +7,20 @@ HTML
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg: #0b0c10;
-            --bg-card: #141721;
-            --bg-card-hover: #1c202e;
-            --text-main: #f0f2f5;
-            --text-muted: #8e95a5;
-            --accent: #00ff66;
-            --accent-dim: rgba(0, 255, 102, 0.12);
-            --accent-glow: rgba(0, 255, 102, 0.35);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(0, 255, 102, 0.4);
-            --font-code: 'Fira Code', monospace;
+            --bg: #F5F2EC;
+            --bg-card: #EFECE4;
+            --bg-card-hover: #E8E4DA;
+            --text-main: #1C1B1A;
+            --text-muted: #66635E;
+            --accent: #8B2623;
+            --accent-soft: rgba(139, 38, 35, 0.08);
+            --border: rgba(28, 27, 26, 0.12);
+            --border-hover: rgba(139, 38, 35, 0.4);
+            --font-serif: 'Playfair Display', Georgia, serif;
             --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
             --container: 1140px;
         }
@@ -43,21 +41,6 @@ HTML
             font-family: var(--font-sans);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* Ambient Glow Background */
-        .ambient-glow {
-            position: fixed;
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.5;
-            filter: blur(80px);
         }
 
         /* Header Navigation */
@@ -67,8 +50,8 @@ HTML
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(11, 12, 16, 0.85);
-            backdrop-filter: blur(16px);
+            background: rgba(245, 242, 236, 0.9);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -82,27 +65,17 @@ HTML
         }
 
         .brand-logo {
-            font-family: var(--font-code);
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--text-main);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .brand-logo .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
@@ -110,7 +83,9 @@ HTML
             text-decoration: none;
             color: var(--text-muted);
             font-size: 0.85rem;
-            font-family: var(--font-code);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             transition: color 0.2s ease;
         }
 
@@ -125,88 +100,83 @@ HTML
             margin: 0 auto;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.4rem 1rem;
-            background: var(--accent-dim);
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            border-radius: 100px;
-            font-family: var(--font-code);
-            font-size: 0.8rem;
+        .hero-meta {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             color: var(--accent);
-            margin-bottom: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
             margin-bottom: 2rem;
-            max-width: 950px;
+            max-width: 900px;
         }
 
-        .hero-title span {
+        .hero-title em {
+            font-style: italic;
+            font-weight: 400;
             color: var(--accent);
-            background: linear-gradient(135deg, #00ff66 0%, #00b347 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .hero-bio {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 720px;
+            max-width: 700px;
             margin-bottom: 3rem;
-            font-weight: 400;
-            line-height: 1.7;
+            font-weight: 300;
+            line-height: 1.8;
         }
 
         .hero-actions {
             display: flex;
-            gap: 1.2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
             padding: 1rem 2rem;
-            background: var(--accent);
-            color: #000;
+            background-color: var(--text-main);
+            color: var(--bg);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 700;
-            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 2px;
             transition: all 0.2s ease;
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 255, 102, 0.4);
+            background-color: var(--accent);
+            color: #fff;
         }
 
         .btn-secondary {
             display: inline-flex;
             align-items: center;
             padding: 1rem 2rem;
-            background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            border-radius: 6px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             transition: all 0.2s ease;
         }
 
         .btn-secondary:hover {
-            border-color: var(--border-hover);
-            color: var(--accent);
+            border-color: var(--text-main);
+            background-color: var(--accent-soft);
         }
 
         /* Section Layout */
@@ -220,145 +190,90 @@ HTML
         .section-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-tag {
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
+            align-items: baseline;
+            margin-bottom: 4rem;
         }
 
         .section-title {
+            font-family: var(--font-serif);
             font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-weight: 400;
+        }
+
+        .section-number {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.1em;
         }
 
         /* Cases Grid */
         .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .case-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2.2rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
 
         .case-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            border-color: var(--accent);
             background: var(--bg-card-hover);
         }
 
-        .case-type {
-            font-family: var(--font-code);
+        .case-tag {
             font-size: 0.75rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
         .case-title {
-            font-size: 1.4rem;
-            font-weight: 700;
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            line-height: 1.35;
+            font-weight: 400;
+            line-height: 1.3;
         }
 
         .case-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 2rem;
-            font-weight: 400;
-            line-height: 1.6;
+            font-weight: 300;
         }
 
-        .case-footer {
+        .case-meta {
+            font-size: 0.8rem;
+            color: var(--text-main);
+            font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1.2rem;
             border-top: 1px solid var(--border);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-main);
+            padding-top: 1rem;
         }
 
-        .case-card:hover .case-footer {
+        .case-card:hover .case-meta {
             color: var(--accent);
-        }
-
-        /* Skills Matrix */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2rem;
-        }
-
-        .skill-box h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-main);
-        }
-
-        .skill-box h3::before {
-            content: "//";
-            color: var(--accent);
-            font-family: var(--font-code);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .tag.highlight {
-            border-color: rgba(0, 255, 102, 0.3);
-            color: var(--text-main);
-            background: var(--accent-dim);
         }
 
         /* Calculator Widget */
         .calc-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
             padding: 3rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -380,23 +295,21 @@ HTML
         .calc-val {
             color: var(--accent);
             font-weight: 700;
-            font-family: var(--font-code);
         }
 
         input[type=range] {
             width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
             outline: none;
             accent-color: var(--accent);
         }
 
         .calc-results {
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -405,74 +318,95 @@ HTML
         }
 
         .calc-res-title {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             margin-bottom: 0.5rem;
         }
 
         .calc-big-num {
+            font-family: var(--font-serif);
             font-size: 3rem;
-            font-weight: 800;
+            font-weight: 600;
             color: var(--accent);
-            font-family: var(--font-code);
             line-height: 1;
             margin-bottom: 1rem;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-group h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "—";
+            color: var(--accent);
+            margin-right: 0.5rem;
         }
 
         /* Timeline */
         .timeline {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .timeline-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2rem;
             display: grid;
-            grid-template-columns: 180px 1fr;
+            grid-template-columns: 200px 1fr;
             gap: 2rem;
         }
 
         .timeline-date {
-            font-family: var(--font-code);
             font-size: 0.85rem;
             color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .timeline-role {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
         }
 
         .timeline-company {
-            color: var(--text-muted);
             font-size: 0.95rem;
+            color: var(--text-muted);
             margin-bottom: 1rem;
         }
 
-        .timeline-bullets {
-            list-style: none;
-        }
-
-        .timeline-bullets li {
+        .timeline-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-
-        .timeline-bullets li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+            font-weight: 300;
+            line-height: 1.7;
         }
 
         /* Modal */
@@ -480,8 +414,8 @@ HTML
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(28, 27, 26, 0.6);
+            backdrop-filter: blur(6px);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -493,12 +427,11 @@ HTML
         }
 
         .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-hover);
-            border-radius: 14px;
+            background: var(--bg);
+            border: 1px solid var(--border);
             max-width: 720px;
             width: 100%;
-            padding: 3rem;
+            padding: 3.5rem;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
@@ -510,32 +443,32 @@ HTML
             right: 1.5rem;
             background: none;
             border: none;
-            color: var(--text-muted);
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--text-muted);
         }
 
         .close-modal:hover { color: var(--accent); }
 
         .modal-body h4 {
-            color: var(--accent);
-            font-family: var(--font-code);
-            font-size: 0.9rem;
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
             margin: 1.8rem 0 0.5rem;
-            text-transform: uppercase;
+            color: var(--accent);
         }
 
         .modal-body p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
+            font-weight: 300;
             line-height: 1.7;
         }
 
         /* Footer */
         footer {
-            background: #07080a;
+            background: var(--bg-card);
             border-top: 1px solid var(--border);
-            padding: 6rem 2rem 3rem;
+            padding: 6rem 2rem 4rem;
         }
 
         .footer-inner {
@@ -547,30 +480,28 @@ HTML
         }
 
         .footer-title {
+            font-family: var(--font-serif);
             font-size: 2.5rem;
-            font-weight: 800;
+            font-weight: 400;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
-        .contact-list {
+        .contact-info {
             list-style: none;
+            margin-bottom: 2rem;
         }
 
-        .contact-list li {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--text-muted);
+        .contact-info li {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
         }
 
-        .contact-list a {
+        .contact-info a {
             color: var(--text-main);
             text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .contact-list a:hover {
-            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
         }
 
         .footer-bottom {
@@ -580,13 +511,13 @@ HTML
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            font-family: var(--font-code);
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 768px) {
             .nav-links { display: none; }
+            .hero { padding-top: 8rem; }
             .calc-card { grid-template-columns: 1fr; }
             .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
             .footer-inner { grid-template-columns: 1fr; }
@@ -595,34 +526,30 @@ HTML
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
-
-    <!-- Navigation -->
+    <!-- Header Navigation -->
     <header>
         <div class="nav-inner">
-            <a href="#" class="brand-logo">
-                <span class="dot"></span>
-                josefin.hjelmäng
-            </a>
+            <a href="#" class="brand-logo">Josefin Hjelmäng</a>
             <ul class="nav-links">
-                <li><a href="#about">// om_mig</a></li>
-                <li><a href="#cases">// cases</a></li>
-                <li><a href="#skills">// system</a></li>
-                <li><a href="#experience">// karriär</a></li>
-                <li><a href="#contact">// kontakt</a></li>
+                <li><a href="#about">Om Mig</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#calculator">Effektivisering</a></li>
+                <li><a href="#skills">Kompetenser</a></li>
+                <li><a href="#experience">Erfarenhet</a></li>
+                <li><a href="#contact">Kontakt</a></li>
             </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
     <main class="hero" id="about">
-        <div class="hero-badge">⚡ E-commerce & Digital Operations Manager</div>
-        <h1 class="hero-title">Bygger <span>skalbara ekosystem</span>, optimerar flöden & växer digital e-handel.</h1>
+        <div class="hero-meta">E-commerce & Digital Operations Manager</div>
+        <h1 class="hero-title">Bygger <em>sömlösa digitala ekosystem</em>, optimerar kundresor & växer e-handeln.</h1>
         <p class="hero-bio">
             Kommersiell och datadriven specialist med över 5 års erfarenhet av att äga, utveckla och optimera komplexa e-handelsmiljöer (D2C & B2B). Jag bryggar klyftan mellan affärsstrategi, konverteringsoptimering (CRO) och djup teknisk infrastruktur (Shopify, ERP, WMS, API:er & AI-automatisering).
         </p>
         <div class="hero-actions">
-            <a href="#cases" class="btn-primary">Utforska mina Cases →</a>
+            <a href="#cases" class="btn-primary">Utforska mina Cases</a>
             <a href="#contact" class="btn-secondary">Ta Kontakt</a>
         </div>
     </main>
@@ -630,21 +557,19 @@ HTML
     <!-- Cases Section -->
     <section id="cases">
         <div class="section-header">
-            <div>
-                <div class="section-tag">// 01. UTVALDA PROJEKT</div>
-                <h2 class="section-title">Cases & Problemlösning</h2>
-            </div>
+            <h2 class="section-title">Valda Cases & Projekt</h2>
+            <span class="section-number">01 / 05</span>
         </div>
 
         <div class="cases-grid">
             <!-- Case 1 -->
             <div class="case-card" onclick="openModal('case1')">
                 <div>
-                    <div class="case-type">Plattformsbyte & Systemarkitektur</div>
-                    <h3 class="case-title">Migration från Centra till Shopify & Extend ERP</h3>
+                    <div class="case-tag">Plattformsbyte & Integration</div>
+                    <h3 class="case-title">Systemmigration från Centra till Shopify & Extend ERP</h3>
                     <p class="case-desc">Ledde det affärskritiska skiftet för Garbo&Friends. Kravställde och strukturerade sömlösa dataflöden mellan Shopify, affärssystem och Ongoing WMS.</p>
                 </div>
-                <div class="case-footer">
+                <div class="case-meta">
                     <span>Läs STAR-analysen</span>
                     <span>→</span>
                 </div>
@@ -653,11 +578,11 @@ HTML
             <!-- Case 2 -->
             <div class="case-card" onclick="openModal('case2')">
                 <div>
-                    <div class="case-type">AI & Operations Automation</div>
+                    <div class="case-tag">Automatisering & AI</div>
                     <h3 class="case-title">AI-driven kvalitetssäkring av produktdata</h3>
-                    <p class="case-desc">Utvecklade automatiserade kontrollflöden via Zapier och Claude AI för att proaktivt upptäcka saknad data och minimera manuellt granskningsarbete.</p>
+                    <p class="case-desc">Utvecklade automatiserade kontrollflöden via Zapier och Claude AI för att proaktivt upptäcka fel i produktdata innan lanseringsstart.</p>
                 </div>
-                <div class="case-footer">
+                <div class="case-meta">
                     <span>Läs STAR-analysen</span>
                     <span>→</span>
                 </div>
@@ -666,11 +591,11 @@ HTML
             <!-- Case 3 -->
             <div class="case-card" onclick="openModal('case3')">
                 <div>
-                    <div class="case-type">CRM & Konverteringsoptimering</div>
-                    <h3 class="case-title">Kundresekvalitet & Marketing Automation</h3>
-                    <p class="case-desc">Omstrukturerade Klaviyo-segmentering, övergivna varukorgsflöden och genomförde A/B-tester på sajten för ökad konvertering och retentionalitetsgrad.</p>
+                    <div class="case-tag">CRO & Marketing Automation</div>
+                    <h3 class="case-title">Kundresekvalitet & Klaviyo-automationer</h3>
+                    <p class="case-desc">Omstrukturerade segmentering, övergivna varukorgsflöden samt A/B-testade köpflödet för ökad konverteringsgrad och retention.</p>
                 </div>
-                <div class="case-footer">
+                <div class="case-meta">
                     <span>Läs STAR-analysen</span>
                     <span>→</span>
                 </div>
@@ -678,20 +603,18 @@ HTML
         </div>
     </section>
 
-    <!-- Interactive Operations Calculator -->
-    <section>
+    <!-- Calculator Section -->
+    <section id="calculator">
         <div class="section-header">
-            <div>
-                <div class="section-tag">// 02. INTERAKTIVT VERKTYG</div>
-                <h2 class="section-title">Operations & Effektiviseringskalkylator</h2>
-            </div>
+            <h2 class="section-title">Operations & Effektiviseringskalkylator</h2>
+            <span class="section-number">02 / 05</span>
         </div>
 
         <div class="calc-card">
             <div>
-                <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Beräkna värdet av processautomatisering</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
-                    Dra i reglagen för att se hur mycket tid och pengar ett verksamhetsanpassat AI- eller automationsflöde (t.ex. Zapier/Shopify Flow/API-skript) sparar i ett e-handelsteam.
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 400;">Beräkna värdet av processautomatisering</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; font-weight: 300;">
+                    Dra i reglagen för att se hur mycket arbetstid och pengar ett anpassat AI- eller automationsflöde (t.ex. Zapier/Shopify Flow/skript) frigör i ett e-handelsteam per år.
                 </p>
 
                 <div class="calc-control">
@@ -714,8 +637,8 @@ HTML
             <div class="calc-results">
                 <div class="calc-res-title">Inbesparad arbetstid per år</div>
                 <div class="calc-big-num" id="saved-hours">416h</div>
-                <div class="calc-res-title" style="margin-top: 1rem;">Motsvarar ett frigjort kapital på</div>
-                <div class="calc-big-num" style="color: #fff;" id="saved-money">187 200 kr</div>
+                <div class="calc-res-title" style="margin-top: 1rem;">Motsvarar frigjort kapital</div>
+                <div class="calc-big-num" style="color: var(--text-main);" id="saved-money">187 200 kr</div>
             </div>
         </div>
     </section>
@@ -723,111 +646,95 @@ HTML
     <!-- Skills Section -->
     <section id="skills">
         <div class="section-header">
-            <div>
-                <div class="section-tag">// 03. SYSTEMEKOSYSTEM</div>
-                <h2 class="section-title">Verktyg & Kompetensområden</h2>
-            </div>
+            <h2 class="section-title">System & Kompetenser</h2>
+            <span class="section-number">03 / 05</span>
         </div>
 
-        <div class="skills-grid">
-            <div class="skill-box">
+        <div class="skills-container">
+            <div class="skill-group">
                 <h3>E-handel & CMS</h3>
-                <div class="skill-tags">
-                    <span class="tag highlight">Shopify (Admin & Flow)</span>
-                    <span class="tag">Centra</span>
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Askås</span>
-                    <span class="tag">Merchandising</span>
-                    <span class="tag">CRO & PDP-design</span>
-                </div>
+                <ul class="skill-list">
+                    <li>Shopify (Admin, Flow & Setup)</li>
+                    <li>Centra</li>
+                    <li>WordPress</li>
+                    <li>Askås</li>
+                    <li>Merchandising & PDP</li>
+                </ul>
             </div>
 
-            <div class="skill-box">
-                <h3>ERP & Logistik</h3>
-                <div class="skill-tags">
-                    <span class="tag highlight">Extend ERP</span>
-                    <span class="tag highlight">Ongoing WMS</span>
-                    <span class="tag">SAP</span>
-                    <span class="tag">Dynamics NAV</span>
-                    <span class="tag">B2B Orderflöden</span>
-                    <span class="tag">Produktdata (PIM)</span>
-                </div>
+            <div class="skill-group">
+                <h3>ERP, WMS & Logistik</h3>
+                <ul class="skill-list">
+                    <li>Extend ERP</li>
+                    <li>Ongoing WMS</li>
+                    <li>SAP</li>
+                    <li>Microsoft Dynamics NAV</li>
+                    <li>Produktdata (PIM)</li>
+                </ul>
             </div>
 
-            <div class="skill-box">
+            <div class="skill-group">
                 <h3>Automation & Tech</h3>
-                <div class="skill-tags">
-                    <span class="tag highlight">Claude AI (Prompting)</span>
-                    <span class="tag highlight">Zapier</span>
-                    <span class="tag">Python-skript</span>
-                    <span class="tag">API & Datamappning</span>
-                    <span class="tag">HTML / CSS</span>
-                    <span class="tag">Advanced Excel</span>
-                </div>
+                <ul class="skill-list">
+                    <li>Claude AI / Prompting</li>
+                    <li>Zapier / Shopify Flow</li>
+                    <li>Python-skript / API:er</li>
+                    <li>HTML / CSS</li>
+                    <li>Advanced Excel</li>
+                </ul>
             </div>
 
-            <div class="skill-box">
-                <h3>CRM & Analytics</h3>
-                <div class="skill-tags">
-                    <span class="tag highlight">Klaviyo</span>
-                    <span class="tag">Google Analytics (GA4)</span>
-                    <span class="tag">Power BI</span>
-                    <span class="tag">Meta Ads Manager</span>
-                    <span class="tag">Figma / Adobe CS</span>
-                    <span class="tag">ClickUp & Trello</span>
-                </div>
+            <div class="skill-group">
+                <h3>CRM, CRO & Analytics</h3>
+                <ul class="skill-list">
+                    <li>Klaviyo</li>
+                    <li>Google Analytics (GA4)</li>
+                    <li>Power BI</li>
+                    <li>Meta Ads Manager</li>
+                    <li>Figma & Adobe CS</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline -->
+    <!-- Experience Section -->
     <section id="experience">
         <div class="section-header">
-            <div>
-                <div class="section-tag">// 04. ARBETSERFARENHET</div>
-                <h2 class="section-title">Karriärsöversikt</h2>
-            </div>
+            <h2 class="section-title">Arbetserfarenhet</h2>
+            <span class="section-number">04 / 05</span>
         </div>
 
         <div class="timeline">
-            <!-- Job 1 -->
             <div class="timeline-item">
-                <div class="timeline-date">2021 — NUTID</div>
+                <div class="timeline-date">2021 — Nutid</div>
                 <div>
-                    <h3 class="timeline-role">E-commerce & Digital Operations Manager</h3>
+                    <h3 class="timeline-role">E-commerce & Operations Manager</h3>
                     <div class="timeline-company">Garbo&Friends AB (Stockholm)</div>
-                    <ul class="timeline-bullets">
-                        <li>Äger och optimerar hela den digitala infrastrukturen och sömlösa dataflöden mellan Shopify, Extend ERP och Ongoing WMS.</li>
-                        <li>Ansvarar för produktens digitala livscykel, från datastrukturering och PIM till kvalitetssäkrad lansering i samtliga kanaler.</li>
-                        <li>Bygger och segmenterar avancerade automatiserade kundresor i Klaviyo samt driver konverteringsoptimering (CRO).</li>
-                        <li>Kravställer och styr teknisk utveckling i nära samarbete med externa webb- och integrationsbyråer.</li>
-                    </ul>
+                    <p class="timeline-desc">
+                        Helhetsansvar för e-handelsdriften (D2C/B2B). Äger systeminfrastrukturen mellan Shopify, Extend ERP och Ongoing WMS. Ansvarar för produktens digitala livscykel, drive konverteringsoptimering (CRO), Klaviyo-automationer samt kravställer mot externa webbyråer.
+                    </p>
                 </div>
             </div>
 
-            <!-- Job 2 -->
             <div class="timeline-item">
                 <div class="timeline-date">2020 — 2021</div>
                 <div>
                     <h3 class="timeline-role">Operations & Warehouse Associate</h3>
                     <div class="timeline-company">Care of Carl AB</div>
-                    <ul class="timeline-bullets">
-                        <li>Operativt helgansvar för lagerdrift och orderhantering efter tidigt utökat förtroende.</li>
-                        <li>Hanterade reklamationer, returflöden och systeminmatning i NAV (Microsoft Dynamics) och Askås.</li>
-                    </ul>
+                    <p class="timeline-desc">
+                        Operativt helgansvar för lagerdrift och orderhantering efter tidigt utökat förtroende. Hanterade reklamationer, returflöden och löpande systemarbete i NAV (Microsoft Dynamics) och Askås.
+                    </p>
                 </div>
             </div>
 
-            <!-- Job 3 -->
             <div class="timeline-item">
                 <div class="timeline-date">2017 — 2020</div>
                 <div>
                     <h3 class="timeline-role">Warehouse Associate (Inbound & Outbound)</h3>
                     <div class="timeline-company">Speed Group / Ericsson</div>
-                    <ul class="timeline-bullets">
-                        <li>Avancerade snabbt till ansvarig för internationella B2B-godsflöden.</li>
-                        <li>Löpande datainmatning, spårning, saldoregistrering och felkorrigering i SAP.</li>
-                    </ul>
+                    <p class="timeline-desc">
+                        Avancerade snabbt till operativt ansvarig för internationella B2B-godsflöden med löpande saldoregistrering, datainmatning och spårning i SAP.
+                    </p>
                 </div>
             </div>
         </div>
@@ -837,25 +744,22 @@ HTML
     <footer id="contact">
         <div class="footer-inner">
             <div>
-                <h2 class="footer-title">Redo för nästa steg?<br><span style="color: var(--accent);">Låt oss ta ett samtal.</span></h2>
-                <p style="color: var(--text-muted); font-size: 1.05rem;">
-                    Jag söker spännande utmaningar inom E-commerce, Digital Operations eller Online Merchandising. Hör gärna av dig om du vill diskutera framtida möjligheter!
+                <h2 class="footer-title">Redo för nästa steg?<br>Låt oss ta ett samtal.</h2>
+                <p style="color: var(--text-muted); font-size: 1rem; font-weight: 300;">
+                    Söker du en strukturerad, prestigelös och datadriven e-handels- och operationsspecialist? Hör gärna av dig!
                 </p>
             </div>
-
             <div>
-                <ul class="contact-list">
+                <ul class="contact-info">
                     <li><strong>E-post:</strong> <a href="mailto:Josefin.hjelmang@hotmail.com">Josefin.hjelmang@hotmail.com</a></li>
-                    <li><strong>Telefon:</strong> <a href="tel:+46705850082">+46 70 585 00 82</a></li>
+                    <li><strong>Telefon:</strong> +46 70 585 00 82</li>
                     <li><strong>Plats:</strong> Stockholm, Sverige</li>
-                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">LinkedIn-profil ↗</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <span>© Josefin Hjelmäng — Portfolio</span>
-            <span>Built with HTML/CSS & AI Integration</span>
+            <span>© Josefin Hjelmäng</span>
+            <span>E-commerce & Digital Operations Manager</span>
         </div>
     </footer>
 
@@ -863,20 +767,20 @@ HTML
     <div class="modal" id="case1">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('case1')">✕</button>
-            <div class="case-type">// STAR-ANALYS — CASE 01</div>
-            <h3 style="font-size: 1.8rem; margin: 0.5rem 0 1rem;">Systemmigration från Centra till Shopify & Extend ERP</h3>
+            <div class="case-tag">Plattformsbyte & Integration</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem;">Systemmigration från Centra till Shopify & Extend ERP</h3>
             <div class="modal-body">
                 <h4>Situation & Utmaning</h4>
-                <p>Garbo&Friends behövde en mer flexibel och skalbar e-handelsplattform samt ett nytt affärssystem (ERP) som sömlöst kunde synka produktdata, B2B/D2C-order och lagersaldon i realtid mot Ongoing WMS.</p>
+                <p>Garbo&Friends behövde en mer flexibel och skalbar e-handelsplattform samt ett nytt affärssystem (ERP) som sömlöst kunde synka produktdata, orderflöden och lagersaldon i realtid mot Ongoing WMS.</p>
                 
-                <h4>Din Roll</h4>
-                <p>Projektledare på affärssidan och teknisk kravställare. Fungerade som bryggan mellan interna behov och de externa webb- och integrationsbyråerna.</p>
+                <h4>Min Roll</h4>
+                <p>Projektledare på affärssidan. Ansvarade för teknisk kravställning, datamappning samt styrning av externa webb- och integrationsbyråer.</p>
 
                 <h4>Lösning & Genomförande</h4>
-                <p>Byggde upp Shopify-admin från grunden, definierade tekniska specifikationer, säkerställde datamappning och övervakade integrationerna under hela migrationsfasen utan stopp i försäljningen.</p>
+                <p>Byggde upp Shopify-admin från grunden, strukturerade datainfrastrukturen mot Extend ERP och Ongoing WMS, samt säkerställde en trygg övergång utan avbrott i försäljningen.</p>
 
                 <h4>Resultat</h4>
-                <p>En modern, helt integrerad systemstruktur med automatiserade flöden, minskad manuell hantering och en stabil plattform redo för internationell tillväxt.</p>
+                <p>En modern, helt integrerad systemstruktur med automatiserade orderflöden och avsevärt minskad manuell administration.</p>
             </div>
         </div>
     </div>
@@ -884,20 +788,20 @@ HTML
     <div class="modal" id="case2">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('case2')">✕</button>
-            <div class="case-type">// STAR-ANALYS — CASE 02</div>
-            <h3 style="font-size: 1.8rem; margin: 0.5rem 0 1rem;">AI-driven kvalitetssäkring av produktdata</h3>
+            <div class="case-tag">Automatisering & AI</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem;">AI-driven kvalitetssäkring av produktdata</h3>
             <div class="modal-body">
                 <h4>Situation & Utmaning</h4>
-                <p>Inför kollektionssläpp var manuella kontroller av produktinformation tidskrävande och skapade risk för att saknad data (t.ex. vikter, tullkoder eller mått) lede till strul i kassan eller på lagret.</p>
+                <p>Inför kollektionssläpp var manuella kontroller av produktinformation tidskrävande och skapade risk för att saknad data (t.ex. vikter, tullkoder eller mått) ledde till fel på sajten eller lagret.</p>
 
-                <h4>Din Roll</h4>
+                <h4>Min Roll</h4>
                 <p>Initiativtagare och utvecklare av den automatiska kontrollprocessen.</p>
 
                 <h4>Lösning & Genomförande</h4>
-                <p>Byggde egna automatiska skript och flöden med Zapier och Claude AI som kontinuerligt skannar produktkatalogen, identifierar avvikelser och validerar datakvaliteten proaktivt i bakgrunden.</p>
+                <p>Satte upp automatiserade kontrollflöden med Zapier och Claude AI för att skanna produktkataloger, flagga avvikelser och validera kodstruktur innan publicering.</p>
 
                 <h4>Resultat</h4>
-                <p>Eliminerade dolda fel på sajten, höjde datakvaliteten dramatiskt och sparade flera timmars manuellt granskningsarbete per vecka.</p>
+                <p>Eliminerade dolda fallgropar på produktsidorna, höjde datakvaliteten och sparade flera timmars manuellt granskningsarbete per vecka.</p>
             </div>
         </div>
     </div>
@@ -905,20 +809,20 @@ HTML
     <div class="modal" id="case3">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('case3')">✕</button>
-            <div class="case-type">// STAR-ANALYS — CASE 03</div>
-            <h3 style="font-size: 1.8rem; margin: 0.5rem 0 1rem;">Kundresekvalitet & Marketing Automation</h3>
+            <div class="case-tag">CRO & Marketing Automation</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem;">Kundresekvalitet & Klaviyo-automationer</h3>
             <div class="modal-body">
                 <h4>Situation & Utmaning</h4>
-                <p>Maximera konvertering och kundlojalitet (retention) genom att förfina kommunikationen i digitala kanaler och eliminera friktion i köpflödet.</p>
+                <p>Maximera konvertering och kundlojalitet genom att förfina kommunikationen i digitala kanaler och eliminera friktion i köpflödet.</p>
 
-                <h4>Din Roll</h4>
-                <p>Ansvarig för CRM (Klaviyo), sajtoptimering (CRO) och kommersiell merchandising.</p>
+                <h4>Min Roll</h4>
+                <p>Ansvarig för CRM, marketing automation och sajtoptimering.</p>
 
                 <h4>Lösning & Genomförande</h4>
-                <p>Konstruerade avancerade segmenteringar och automatiserade flöden i Klaviyo (browse abandonment, övergivna varukorgar) samt utförde A/B-testning och kategorijusteringar på produktsidorna.</p>
+                <p>Byggde och A/B-testade avancerade flöden i Klaviyo (övergivna varukorgar, browse abandonment) samt optimerade kassa- och produktsidorna i Shopify.</p>
 
                 <h4>Resultat</h4>
-                <p>Stärkt kundlojalitet, högre snittordervärde (AOV) och en tydlig ökning i försäljningen driven direkt av e-postkanalerna.</p>
+                <p>Högre konverteringsgrad, stärkt kundlojalitet och en mätbar ökning av försäljningen från e-postkanalen.</p>
             </div>
         </div>
     </div>
@@ -935,9 +839,9 @@ HTML
             document.body.style.overflow = 'auto';
         }
 
-        window.onclick = function(e) {
-            if (e.target.classList.contains('modal')) {
-                e.target.classList.remove('active');
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         }
